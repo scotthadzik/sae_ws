@@ -1,0 +1,8 @@
+prefix=/home/scott/sae_ws/ros_ws/install
+
+Name: lane_keeping
+Description: Description of lane_keeping
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

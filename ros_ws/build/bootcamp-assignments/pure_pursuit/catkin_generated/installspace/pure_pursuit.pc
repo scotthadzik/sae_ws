@@ -1,0 +1,8 @@
+prefix=/home/scott/sae_ws/ros_ws/install
+
+Name: pure_pursuit
+Description: Description of pure_pursuit
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

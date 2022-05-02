@@ -1,0 +1,36 @@
+<launch>
+   <arg name="l_x" default="2.0"/> 
+   <arg name="l_y" default = "0" /> 
+   <arg name="l_z" default = "0" />
+   <arg name="a_x" default="0"/> 
+   <arg name="a_y" default = "0" /> 
+   <arg name="a_z" default = "-1.8" />
+
+   <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node_A">
+       <remap from="turtle1/cmd_vel" to="nodeA_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node_B">
+       <remap from="turtle1/cmd_vel" to="nodeB_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim_cleaner" type="circle.py" name="circleA">
+       <param name="l_x" value="$(arg l_x)"/>
+       <param name="l_y" value="$(arg l_y)"/>
+       <param name="l_z" value="$(arg l_z)"/>
+       <param name="a_x" value="$(arg a_x)"/>
+       <param name="a_y" value="$(arg a_y)"/>
+       <param name="a_z" value="$(arg a_z)"/>
+    <remap from="turtle1/cmd_vel" to="nodeA_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim_cleaner" type="circle.py" name="circleB">
+       <param name="l_x" value="3.0"/>
+       <param name="l_y" value="0"/>
+       <param name="l_z" value="0"/>
+       <param name="a_x" value="0"/>
+       <param name="a_y" value="0"/>
+       <param name="a_z" value="-1.8"/>
+    <remap from="turtle1/cmd_vel" to="nodeB_cmdvel"/>
+   </node> 
+</launch>

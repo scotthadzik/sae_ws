@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/scott/sae_ws/ros_ws/install/setup.sh
