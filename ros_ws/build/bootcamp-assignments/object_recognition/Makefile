@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /home/scott/sae_ws/ros_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -88,28 +100,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
@@ -123,17 +124,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,94 +168,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/rule
+bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/rule:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/rule
+.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/rule
 
 # Convenience name for target.
-object_recognition_generate_messages_py: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/rule
+object_recognition_generate_messages: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/rule
 
-.PHONY : object_recognition_generate_messages_py
+.PHONY : object_recognition_generate_messages
 
 # fast build rule for target.
-object_recognition_generate_messages_py/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/build
-.PHONY : object_recognition_generate_messages_py/fast
+object_recognition_generate_messages/fast:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/build
+.PHONY : object_recognition_generate_messages/fast
 
 # Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/rule
+bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/rule:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/rule
+.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-object_recognition_generate_messages_nodejs: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/rule
+object_recognition_generate_messages_cpp: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/rule
 
-.PHONY : object_recognition_generate_messages_nodejs
+.PHONY : object_recognition_generate_messages_cpp
 
 # fast build rule for target.
-object_recognition_generate_messages_nodejs/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/build
-.PHONY : object_recognition_generate_messages_nodejs/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/rule
-
-# Convenience name for target.
-object_recognition_genlisp: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/rule
-
-.PHONY : object_recognition_genlisp
-
-# fast build rule for target.
-object_recognition_genlisp/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/build
-.PHONY : object_recognition_genlisp/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-object_recognition_generate_messages_lisp: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/rule
-
-.PHONY : object_recognition_generate_messages_lisp
-
-# fast build rule for target.
-object_recognition_generate_messages_lisp/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/build
-.PHONY : object_recognition_generate_messages_lisp/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/rule
-
-# Convenience name for target.
-object_recognition_geneus: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/rule
-
-.PHONY : object_recognition_geneus
-
-# fast build rule for target.
-object_recognition_geneus/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/build
-.PHONY : object_recognition_geneus/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-object_recognition_generate_messages_eus: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/rule
-
-.PHONY : object_recognition_generate_messages_eus
-
-# fast build rule for target.
-object_recognition_generate_messages_eus/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/build
-.PHONY : object_recognition_generate_messages_eus/fast
+object_recognition_generate_messages_cpp/fast:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/build
+.PHONY : object_recognition_generate_messages_cpp/fast
 
 # Convenience name for target.
 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gencpp.dir/rule:
@@ -273,199 +213,19 @@ object_recognition_gencpp/fast:
 .PHONY : object_recognition_gencpp/fast
 
 # Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/rule:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/rule
+.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_cpp: bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+object_recognition_generate_messages_lisp: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_cpp
+.PHONY : object_recognition_generate_messages_lisp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/rule
-
-# Convenience name for target.
-object_recognition_genpy: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/rule
-
-.PHONY : object_recognition_genpy
-
-# fast build rule for target.
-object_recognition_genpy/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/build
-.PHONY : object_recognition_genpy/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/rule
-
-# Convenience name for target.
-object_recognition_generate_messages: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/rule
-
-.PHONY : object_recognition_generate_messages
-
-# fast build rule for target.
-object_recognition_generate_messages/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages.dir/build
-.PHONY : object_recognition_generate_messages/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/rule
-
-# Convenience name for target.
-object_recognition_gennodejs: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/rule
-
-.PHONY : object_recognition_gennodejs
-
-# fast build rule for target.
-object_recognition_gennodejs/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/build
-.PHONY : object_recognition_gennodejs/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
+object_recognition_generate_messages_lisp/fast:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_lisp.dir/build
+.PHONY : object_recognition_generate_messages_lisp/fast
 
 # Convenience name for target.
 bootcamp-assignments/object_recognition/CMakeFiles/_object_recognition_generate_messages_check_deps_Predictor.dir/rule:
@@ -483,19 +243,109 @@ _object_recognition_generate_messages_check_deps_Predictor/fast:
 .PHONY : _object_recognition_generate_messages_check_deps_Predictor/fast
 
 # Convenience name for target.
-bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/rule:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/rule
-.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/rule
+bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/rule:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/rule
+.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/rule
 
 # Convenience name for target.
-object_recognition_generate_messages_cpp: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/rule
+object_recognition_gennodejs: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/rule
 
-.PHONY : object_recognition_generate_messages_cpp
+.PHONY : object_recognition_gennodejs
 
 # fast build rule for target.
-object_recognition_generate_messages_cpp/fast:
-	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_cpp.dir/build
-.PHONY : object_recognition_generate_messages_cpp/fast
+object_recognition_gennodejs/fast:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_gennodejs.dir/build
+.PHONY : object_recognition_gennodejs/fast
+
+# Convenience name for target.
+bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/rule:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/rule
+.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+object_recognition_generate_messages_eus: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/rule
+
+.PHONY : object_recognition_generate_messages_eus
+
+# fast build rule for target.
+object_recognition_generate_messages_eus/fast:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_eus.dir/build
+.PHONY : object_recognition_generate_messages_eus/fast
+
+# Convenience name for target.
+bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/rule:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/rule
+.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/rule
+
+# Convenience name for target.
+object_recognition_geneus: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/rule
+
+.PHONY : object_recognition_geneus
+
+# fast build rule for target.
+object_recognition_geneus/fast:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_geneus.dir/build
+.PHONY : object_recognition_geneus/fast
+
+# Convenience name for target.
+bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/rule:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/rule
+.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/rule
+
+# Convenience name for target.
+object_recognition_genlisp: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/rule
+
+.PHONY : object_recognition_genlisp
+
+# fast build rule for target.
+object_recognition_genlisp/fast:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genlisp.dir/build
+.PHONY : object_recognition_genlisp/fast
+
+# Convenience name for target.
+bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/rule:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/rule
+.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+object_recognition_generate_messages_nodejs: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/rule
+
+.PHONY : object_recognition_generate_messages_nodejs
+
+# fast build rule for target.
+object_recognition_generate_messages_nodejs/fast:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_nodejs.dir/build
+.PHONY : object_recognition_generate_messages_nodejs/fast
+
+# Convenience name for target.
+bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/rule:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/rule
+.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/rule
+
+# Convenience name for target.
+object_recognition_generate_messages_py: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/rule
+
+.PHONY : object_recognition_generate_messages_py
+
+# fast build rule for target.
+object_recognition_generate_messages_py/fast:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_generate_messages_py.dir/build
+.PHONY : object_recognition_generate_messages_py/fast
+
+# Convenience name for target.
+bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/rule:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/rule
+.PHONY : bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/rule
+
+# Convenience name for target.
+object_recognition_genpy: bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/rule
+
+.PHONY : object_recognition_genpy
+
+# fast build rule for target.
+object_recognition_genpy/fast:
+	cd /home/scott/sae_ws/ros_ws/build && $(MAKE) -f bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/build.make bootcamp-assignments/object_recognition/CMakeFiles/object_recognition_genpy.dir/build
+.PHONY : object_recognition_genpy/fast
 
 # Help Target
 help:
@@ -503,35 +353,25 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/local"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... object_recognition_generate_messages_py"
-	@echo "... object_recognition_generate_messages_nodejs"
-	@echo "... object_recognition_genlisp"
-	@echo "... object_recognition_generate_messages_lisp"
-	@echo "... object_recognition_geneus"
-	@echo "... object_recognition_generate_messages_eus"
-	@echo "... object_recognition_gencpp"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... install/local"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... install"
-	@echo "... object_recognition_genpy"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... object_recognition_generate_messages"
-	@echo "... object_recognition_gennodejs"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... _object_recognition_generate_messages_check_deps_Predictor"
 	@echo "... install/strip"
 	@echo "... object_recognition_generate_messages_cpp"
+	@echo "... object_recognition_gencpp"
+	@echo "... object_recognition_generate_messages_lisp"
+	@echo "... _object_recognition_generate_messages_check_deps_Predictor"
+	@echo "... object_recognition_gennodejs"
+	@echo "... object_recognition_generate_messages_eus"
+	@echo "... object_recognition_geneus"
+	@echo "... object_recognition_genlisp"
+	@echo "... object_recognition_generate_messages_nodejs"
+	@echo "... object_recognition_generate_messages_py"
+	@echo "... install"
+	@echo "... object_recognition_genpy"
+	@echo "... test"
 .PHONY : help
 
 

@@ -397,6 +397,9 @@ INSTALL_GTEST:BOOL=OFF
 //Path to a library.
 JSONCPP_LIBRARY_jsoncpp:FILEPATH=/usr/lib/x86_64-linux-gnu/libjsoncpp.so
 
+//Path to a library.
+LOG4CXX_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/liblog4cxx.so
+
 //lsb_release executable was found
 LSB_FOUND:BOOL=TRUE
 
@@ -739,6 +742,24 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 //Path to a file.
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
+//Value Computed by CMake
+ackermann_cmd_mux_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/racecar/ackermann_cmd_mux
+
+//Value Computed by CMake
+ackermann_cmd_mux_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/racecar/ackermann_cmd_mux
+
+//Dependencies for the target
+ackermann_cmd_mux_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libnodeletlib.so;general;/opt/ros/noetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;yaml-cpp;
+
+//Value Computed by CMake
+ackermann_msgs_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/ackermann_msgs
+
+//The directory containing a CMake configuration file for ackermann_msgs.
+ackermann_msgs_DIR:PATH=/home/scott/sae_ws/ros_ws/devel/share/ackermann_msgs/cmake
+
+//Value Computed by CMake
+ackermann_msgs_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/ackermann_msgs
+
 //The directory containing a CMake configuration file for actionlib.
 actionlib_DIR:PATH=/opt/ros/noetic/share/actionlib/cmake
 
@@ -762,6 +783,12 @@ beginner_tutorials_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/beginner_tu
 
 //Value Computed by CMake
 beginner_tutorials_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/beginner_tutorials
+
+//The directory containing a CMake configuration file for bond.
+bond_DIR:PATH=/opt/ros/noetic/share/bond/cmake
+
+//The directory containing a CMake configuration file for bondcpp.
+bondcpp_DIR:PATH=/opt/ros/noetic/share/bondcpp/cmake
 
 //The directory containing a CMake configuration file for boost_atomic.
 boost_atomic_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.71.0
@@ -796,11 +823,23 @@ catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 //The directory containing a CMake configuration file for ccd.
 ccd_DIR:PATH=ccd_DIR-NOTFOUND
 
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/opt/ros/noetic/share/class_loader/cmake
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
 
 //The directory containing a CMake configuration file for cv_bridge.
 cv_bridge_DIR:PATH=/opt/ros/noetic/share/cv_bridge/cmake
+
+//The directory containing a CMake configuration file for diagnostic_msgs.
+diagnostic_msgs_DIR:PATH=/opt/ros/noetic/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/noetic/share/diagnostic_updater/cmake
+
+//The directory containing a CMake configuration file for driver_base.
+driver_base_DIR:PATH=/opt/ros/noetic/share/driver_base/cmake
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/noetic/share/dynamic_reconfigure/cmake
@@ -884,6 +923,12 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 
+//Value Computed by CMake
+hokuyo_node_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/hokuyo_node
+
+//Value Computed by CMake
+hokuyo_node_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/hokuyo_node
+
 //The directory containing a CMake configuration file for ignition-cmake2.
 ignition-cmake2_DIR:PATH=/usr/share/cmake/ignition-cmake2
 
@@ -905,6 +950,18 @@ ignition-msgs5_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-msgs5
 //The directory containing a CMake configuration file for ignition-transport8.
 ignition-transport8_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-transport8
 
+//Value Computed by CMake
+joy_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/joystick_drivers/joy
+
+//Value Computed by CMake
+joy_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/joystick_drivers/joy
+
+//Value Computed by CMake
+joystick_drivers_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/joystick_drivers/joystick_drivers
+
+//Value Computed by CMake
+joystick_drivers_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/joystick_drivers/joystick_drivers
+
 //The directory containing a CMake configuration file for jsoncpp.
 jsoncpp_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/jsoncpp
 
@@ -916,6 +973,9 @@ lane_keeping_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/bootcamp-assignment
 
 //Path to a library.
 lib:FILEPATH=/opt/ros/noetic/lib/libxmlrpcpp.so
+
+//Dependencies for the target
+libhokuyo_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
 
 //Value Computed by CMake
 localization_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/bootcamp-assignments/localization
@@ -940,6 +1000,15 @@ move_base_msgs_DIR:PATH=/opt/ros/noetic/share/move_base_msgs/cmake
 
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/noetic/share/nav_msgs/cmake
+
+//Value Computed by CMake
+navigate_to_goal_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/navigate_to_goal
+
+//Value Computed by CMake
+navigate_to_goal_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/navigate_to_goal
+
+//The directory containing a CMake configuration file for nodelet.
+nodelet_DIR:PATH=/opt/ros/noetic/share/nodelet/cmake
 
 //Value Computed by CMake
 object_recognition_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/bootcamp-assignments/object_recognition
@@ -1007,11 +1076,47 @@ pkgcfg_lib_ZIP_zip:FILEPATH=/usr/lib/x86_64-linux-gnu/libzip.so
 //Path to a library.
 pkgcfg_lib_ZeroMQ_zmq:FILEPATH=/usr/lib/x86_64-linux-gnu/libzmq.so
 
+//Path to a library.
+pkgcfg_lib_yaml-cpp_yaml-cpp:FILEPATH=/usr/lib/x86_64-linux-gnu/libyaml-cpp.so
+
+//The directory containing a CMake configuration file for pluginlib.
+pluginlib_DIR:PATH=/opt/ros/noetic/share/pluginlib/cmake
+
 //Value Computed by CMake
 pure_pursuit_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/bootcamp-assignments/pure_pursuit
 
 //Value Computed by CMake
 pure_pursuit_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/bootcamp-assignments/pure_pursuit
+
+//Value Computed by CMake
+race_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/simulator/race
+
+//Value Computed by CMake
+race_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/simulator/race
+
+//Value Computed by CMake
+racecar_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/racecar/racecar
+
+//Value Computed by CMake
+racecar_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/racecar/racecar
+
+//Value Computed by CMake
+racecar_control_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/simulator/racecar-simulator/racecar_control
+
+//Value Computed by CMake
+racecar_control_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/simulator/racecar-simulator/racecar_control
+
+//Value Computed by CMake
+racecar_description_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/simulator/racecar-simulator/racecar_description
+
+//Value Computed by CMake
+racecar_description_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/simulator/racecar-simulator/racecar_description
+
+//Value Computed by CMake
+racecar_gazebo_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/simulator/racecar-simulator/racecar_gazebo
+
+//Value Computed by CMake
+racecar_gazebo_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/simulator/racecar-simulator/racecar_gazebo
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/noetic/share/rosconsole/cmake
@@ -1046,8 +1151,26 @@ rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
 //The directory containing a CMake configuration file for sdformat9.
 sdformat9_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/sdformat9
 
+//The directory containing a CMake configuration file for self_test.
+self_test_DIR:PATH=/opt/ros/noetic/share/self_test/cmake
+
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
+
+//Value Computed by CMake
+serial_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/serial
+
+//The directory containing a CMake configuration file for serial.
+serial_DIR:PATH=/home/scott/sae_ws/ros_ws/devel/share/serial/cmake
+
+//Dependencies for the target
+serial_LIB_DEPENDS:STATIC=general;rt;general;pthread;
+
+//Value Computed by CMake
+serial_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/serial
+
+//The directory containing a CMake configuration file for smclib.
+smclib_DIR:PATH=/opt/ros/noetic/share/smclib/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
@@ -1105,6 +1228,39 @@ turtlesim_cleaner_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/bootcamp-ass
 
 //Value Computed by CMake
 turtlesim_cleaner_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/bootcamp-assignments/turtlesim_cleaner
+
+//Value Computed by CMake
+vesc_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/vesc/vesc
+
+//Value Computed by CMake
+vesc_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/vesc/vesc
+
+//Value Computed by CMake
+vesc_ackermann_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/vesc/vesc_ackermann
+
+//Value Computed by CMake
+vesc_ackermann_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/vesc/vesc_ackermann
+
+//Dependencies for the target
+vesc_ackermann_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libnodeletlib.so;general;/opt/ros/noetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libtf.so;general;/opt/ros/noetic/lib/libtf2_ros.so;general;/opt/ros/noetic/lib/libactionlib.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libtf2.so;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
+//Value Computed by CMake
+vesc_driver_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/vesc/vesc_driver
+
+//Value Computed by CMake
+vesc_driver_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/vesc/vesc_driver
+
+//Dependencies for the target
+vesc_driver_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libnodeletlib.so;general;/opt/ros/noetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;serial;general;/usr/lib/x86_64-linux-gnu/librt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
+
+//Value Computed by CMake
+vesc_msgs_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/f110-simulator-public/system/vesc/vesc_msgs
+
+//The directory containing a CMake configuration file for vesc_msgs.
+vesc_msgs_DIR:PATH=/home/scott/sae_ws/ros_ws/devel/share/vesc_msgs/cmake
+
+//Value Computed by CMake
+vesc_msgs_SOURCE_DIR:STATIC=/home/scott/sae_ws/ros_ws/src/f110-simulator-public/system/vesc/vesc_msgs
 
 //Value Computed by CMake
 wall_following_BINARY_DIR:STATIC=/home/scott/sae_ws/ros_ws/build/bootcamp-assignments/wall_following
@@ -1303,7 +1459,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=17
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=34
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1356,7 +1512,7 @@ CURL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 CURL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 DART_DEFINITIONS:INTERNAL=
 DART_INCLUDE_DIRS:INTERNAL=/usr/include
-DART_LIBRARIES:INTERNAL=dart;dart
+DART_LIBRARIES:INTERNAL=dart;dart;dart
 //Boost min version requirement
 DART_MIN_BOOST_VERSION:INTERNAL=1.58.0
 DART_dart_DEFINITIONS:INTERNAL=
@@ -1373,7 +1529,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boo
 //Details about finding CURL
 FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcurl.so][/usr/include/x86_64-linux-gnu][c ][v7.68.0()]
 //Details about finding DART
-FIND_PACKAGE_MESSAGE_DETAILS_DART:INTERNAL=[/usr/include][dart;dart][cfound components: dart ][v(6.6)]
+FIND_PACKAGE_MESSAGE_DETAILS_DART:INTERNAL=[/usr/include][dart;dart;dart][cfound components: dart ][v(6.6)]
 //Details about finding DL
 FIND_PACKAGE_MESSAGE_DETAILS_DL:INTERNAL=[true][v()]
 //Details about finding JSONCPP
@@ -1422,6 +1578,8 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//Have include linux/joystick.h
+HAVE_LINUX_JOYSTICK_H:INTERNAL=1
 JSONCPP_CFLAGS:INTERNAL=-I/usr/include/jsoncpp
 JSONCPP_CFLAGS_I:INTERNAL=
 JSONCPP_CFLAGS_OTHER:INTERNAL=
@@ -2022,6 +2180,7 @@ __pkg_config_checked_UUID:INTERNAL=1
 __pkg_config_checked_YAML:INTERNAL=1
 __pkg_config_checked_ZIP:INTERNAL=1
 __pkg_config_checked_ZeroMQ:INTERNAL=1
+__pkg_config_checked_yaml-cpp:INTERNAL=1
 //ADVANCED property for variable: boost_atomic_DIR
 boost_atomic_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_date_time_DIR
@@ -2086,5 +2245,42 @@ pkgcfg_lib_YAML_yaml-ADVANCED:INTERNAL=1
 pkgcfg_lib_ZIP_zip-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ZeroMQ_zmq
 pkgcfg_lib_ZeroMQ_zmq-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_yaml-cpp_yaml-cpp
+pkgcfg_lib_yaml-cpp_yaml-cpp-ADVANCED:INTERNAL=1
 prefix_result:INTERNAL=/usr//usr/lib/x86_64-linux-gnu
+yaml-cpp_CFLAGS:INTERNAL=
+yaml-cpp_CFLAGS_I:INTERNAL=
+yaml-cpp_CFLAGS_OTHER:INTERNAL=
+yaml-cpp_FOUND:INTERNAL=1
+yaml-cpp_INCLUDEDIR:INTERNAL=/usr/include
+yaml-cpp_INCLUDE_DIRS:INTERNAL=
+yaml-cpp_LDFLAGS:INTERNAL=-L/usr//usr/lib/x86_64-linux-gnu;-lyaml-cpp
+yaml-cpp_LDFLAGS_OTHER:INTERNAL=
+yaml-cpp_LIBDIR:INTERNAL=/usr//usr/lib/x86_64-linux-gnu
+yaml-cpp_LIBRARIES:INTERNAL=yaml-cpp
+yaml-cpp_LIBRARY_DIRS:INTERNAL=/usr//usr/lib/x86_64-linux-gnu
+yaml-cpp_LIBS:INTERNAL=
+yaml-cpp_LIBS_L:INTERNAL=
+yaml-cpp_LIBS_OTHER:INTERNAL=
+yaml-cpp_LIBS_PATHS:INTERNAL=
+yaml-cpp_MODULE_NAME:INTERNAL=yaml-cpp
+yaml-cpp_PREFIX:INTERNAL=/usr
+yaml-cpp_STATIC_CFLAGS:INTERNAL=
+yaml-cpp_STATIC_CFLAGS_I:INTERNAL=
+yaml-cpp_STATIC_CFLAGS_OTHER:INTERNAL=
+yaml-cpp_STATIC_INCLUDE_DIRS:INTERNAL=
+yaml-cpp_STATIC_LDFLAGS:INTERNAL=-L/usr//usr/lib/x86_64-linux-gnu;-lyaml-cpp
+yaml-cpp_STATIC_LDFLAGS_OTHER:INTERNAL=
+yaml-cpp_STATIC_LIBDIR:INTERNAL=
+yaml-cpp_STATIC_LIBRARIES:INTERNAL=yaml-cpp
+yaml-cpp_STATIC_LIBRARY_DIRS:INTERNAL=/usr//usr/lib/x86_64-linux-gnu
+yaml-cpp_STATIC_LIBS:INTERNAL=
+yaml-cpp_STATIC_LIBS_L:INTERNAL=
+yaml-cpp_STATIC_LIBS_OTHER:INTERNAL=
+yaml-cpp_STATIC_LIBS_PATHS:INTERNAL=
+yaml-cpp_VERSION:INTERNAL=0.6.2
+yaml-cpp_yaml-cpp_INCLUDEDIR:INTERNAL=
+yaml-cpp_yaml-cpp_LIBDIR:INTERNAL=
+yaml-cpp_yaml-cpp_PREFIX:INTERNAL=
+yaml-cpp_yaml-cpp_VERSION:INTERNAL=
 

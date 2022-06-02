@@ -1,0 +1,8 @@
+prefix=/home/scott/sae_ws/ros_ws/devel
+
+Name: navigate_to_goal
+Description: Description of navigate_to_goal
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

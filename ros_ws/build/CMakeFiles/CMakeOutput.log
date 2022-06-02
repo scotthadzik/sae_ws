@@ -489,3 +489,17 @@ make[1]: Leaving directory '/home/scott/sae_ws/ros_ws/build/CMakeFiles/CMakeTmp'
 
 
 
+Determining if files linux/joystick.h exist passed with the following output:
+Change Dir: /home/scott/sae_ws/ros_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8907f/fast && /usr/bin/make -f CMakeFiles/cmTC_8907f.dir/build.make CMakeFiles/cmTC_8907f.dir/build
+make[1]: Entering directory '/home/scott/sae_ws/ros_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8907f.dir/HAVE_LINUX_JOYSTICK_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_8907f.dir/HAVE_LINUX_JOYSTICK_H.c.o   -c /home/scott/sae_ws/ros_ws/build/CMakeFiles/CheckIncludeFiles/HAVE_LINUX_JOYSTICK_H.c
+Linking C executable cmTC_8907f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8907f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8907f.dir/HAVE_LINUX_JOYSTICK_H.c.o  -o cmTC_8907f 
+make[1]: Leaving directory '/home/scott/sae_ws/ros_ws/build/CMakeFiles/CMakeTmp'
+
+
+

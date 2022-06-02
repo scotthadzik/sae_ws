@@ -1,9 +1,4 @@
 <launch>
-   <arg name="radius" default="1.0"/> 
-   
    <node pkg="beginner_tutorials" type="circle.py" name="turtle_c">
-      <param name='radius' value="2.0"/>
    </node>
-
-  
 </launch>
